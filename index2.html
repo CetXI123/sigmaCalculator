@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Game for pro">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+       <div id="box1">
+        <h1>Pro</h1>
+        <h3>$6 monthly / $67 annually</h3>
+        <p>Fast results <br>
+            No ads <br>
+            Best for students <br>
+            Best budget
+        </p>
+        <button id="btn1" onclick="promonthly()">Monthly</button>
+        <button id="btn2" onclick="proannually()">Annually</button>
+       </div>
+        <br><br><br>
+       <div id="box2">
+        <h1>Premium</h1>
+        <h3>$10 monthly / $116 annually</h3>
+        <p>FASTEST results <br>
+            No ads <br>
+            Best for professionals and students <br>
+            Best functioning
+        </p>
+        <button id="btn3" onclick="premiummonthly()">Monthly</button>
+        <button id="btn4" onclick="premiumannually()">Annually</button>
+       </div>
+
+       <br><br><hr><br>
+
+       <h1 id="resulttext"></h1>
+       <button id="btn5" onclick="cash()">Cash</button>
+       <button id="btn6" onclick="card()">Card</button>
+       <button id="btn7" onclick="onlinebank()">Online Bank</button>
+       <button id="btn8" onclick="ewallettransfer()">E-wallet Transfer</button>
+
+       <h4 id="payment"></h4><input type="number" id="ipt4" required><br><br><button id="btn9" onclick="pay()">Pay</button><br>
+       <p>*for cash payments: Our admin will contact you shortly.</p>
+    </body>
+    <style>
+       #box1{
+        text-align: center;
+        border-style: groove;
+        height:fit-content;
+        width:fit-content;
+        margin: auto;
+       }
+       #box2{
+        text-align: center;
+        border-style: groove;
+        height:fit-content;
+        width:fit-content;
+        margin: auto;
+       }
+       button{
+        border-style: groove;
+        border-radius: 10px;
+        font-size: 1.5em;
+       }
+       button:hover{
+        background-color: chartreuse;
+       }
+       button:active{
+        background-color: yellow;
+       }
+    </style>
+    <script>
+        function promonthly(){
+            document.getElementById("resulttext").innerHTML = "Pro Monthly: $6";
+        }
+        function proannually(){
+            document.getElementById("resulttext").innerHTML = "Pro Annually: $67";
+        }
+        function premiummonthly(){
+            document.getElementById("resulttext").innerHTML = "Premium Monthly: $10";
+        }
+        function premiumannually(){
+            document.getElementById("resulttext").innerHTML = "Premium Annually: $116";
+        }
+        function cash(){
+            document.getElementById("payment").innerHTML = "Contact number: ";
+        }
+        function card(){
+            document.getElementById("payment").innerHTML = "Card number: ";
+        }
+        function onlinebank(){
+            document.getElementById("payment").innerHTML = "Bank account: ";
+        }
+        function ewallettransfer(){
+            document.getElementById("payment").innerHTML = "Temporary disabled";
+        }
+        function pay(){
+            const ipt4 = document.getElementById("ipt4");
+            if (!ipt4.value) {
+                alert("Please enter the required information.");
+                return;
+            }
+            else{
+                alert("Thank you for your payment. You will be redirected to the main page. Thank you for choosing us.");
+                location.replace("index3.html");
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Game for pro">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="box1">
+           <ol>
+            <li>Addition</li>
+            <li>Subtraction</li>
+            <li>Multiplication</li>
+            <li>Division</li>
+            <li>Exponentiation</li>
+           </ol>
+           <p>Select 1-5 and enter the number below</p>
+           <input type="text" id="ipt1" type=""> <button id="btn">Enter</button><br><br><hr>
+           <br>
+           <p>Enter numbers</p>
+           <input type="text" id="ipt2"><p id="symbol" style="font-size: 2em;"></p><input type="text" id="ipt3">
+           <br><br><button id="btn1" onclick="calc()">Get answer</button>
+           <br><br><div id="dis" style="font-size: 2em;"></div>
+        </div>
+    </body>
+    <style>
+        #btn1{
+            border-style: groove;
+            border-radius: 10px;
+            font-size: 1.5em;
+        }
+        #btn1:hover{
+            background-color: aqua;
+        }
+        #btn1:active{
+            background-color: chartreuse;
+        }
+        #dis{
+            height: 1.3em;
+            width: fit-content;
+            border-style: groove;
+            border-width: 2px;
+            border-color: black;
+        }
+    </style>
+    <script>
+
+        const ipt1 = document.getElementById("ipt1");
+        const ipt2 = document.getElementById("ipt2");
+        const ipt3 = document.getElementById("ipt3");
+        const sym = document.getElementById("symbol");
+        const btn = document.getElementById("btn")
+        const btn1 = document.getElementById("btn1");
+        const dis = document.getElementById("dis");
+        
+
+        btn.onclick = function(){
+            let n1 = ipt1.value;
+            n1 = Number(n1);
+            if(n1==1){
+                sym.textContent = ("+");
+            }
+            else if(n1==2){
+                sym.textContent = ("-");
+            }
+            else if(n1==3){
+                sym.textContent = ("x");
+            }
+            else if(n1==4){
+                sym.textContent = ("/");
+            }
+            else if(n1==5){
+                sym.textContent = ("^");
+            }
+            else if(n1==NaN){
+                location.replace("https://www.pornhub.com")
+            }
+        }
+
+            function calc(){
+            let n1 = ipt1.value;
+            let a = ipt2.value;
+            let b = ipt3.value;
+            n1 = Number(n1);
+            a = Number(a);
+            b = Number(b);
+            let ans;
+            if(n1==1){
+                ans = (a+b);
+                dis.textContent = (ans);
+            }
+            else if(n1==2){
+                ans = (a-b);
+                dis.textContent = (ans);
+            }
+            else if(n1==3){
+                ans = (a*b);
+                dis.textContent = (ans);
+            }
+            else if(n1==4){
+                ans = (a/b);
+                dis.textContent = (ans);
+            }
+            else if(n1==5){
+                ans = (a**b);
+                dis.textContent = (ans);
+            }
+        }
+    </script>
+</html>
