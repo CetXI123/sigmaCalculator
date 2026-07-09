@@ -8,6 +8,7 @@
     </head>
 
     <body>
+        <h1>Step 1: select a plan</h1>
        <div id="box1">
         <h1>Pro</h1>
         <h3>$6 monthly / $67 annually</h3>
@@ -34,13 +35,16 @@
 
        <br><br><hr><br>
 
+       <h1>Step 2: choose payment method</h1>
+
        <h1 id="resulttext"></h1>
        <button id="btn5" onclick="cash()">Cash</button>
        <button id="btn6" onclick="card()">Card</button>
        <button id="btn7" onclick="onlinebank()">Online Bank</button>
        <button id="btn8" onclick="ewallettransfer()">E-wallet Transfer</button>
 
-       <h4 id="payment"></h4><input type="number" id="ipt4" required><br><br><button id="btn9" onclick="pay()">Pay</button><br>
+       <h4>Email: </h4><input type="email" id="ipt5" required><br>
+       <h4 id="payment"></h4><input type="text" id="ipt4" required><br><br><button id="btn9" onclick="pay()">Pay</button><br>
        <p>*for cash payments: Our admin will contact you shortly.</p>
     </body>
     <style>
@@ -97,12 +101,13 @@
         }
         function pay(){
             const ipt4 = document.getElementById("ipt4");
-            if (!ipt4.value) {
+            const ipt5 = document.getElementById("ipt5");
+            if (!ipt4.value && !ipt5.value) {
                 alert("Please enter the required information.");
                 return;
             }
             else{
-                alert("Thank you for your payment. You will be redirected to the main page. Thank you for choosing us.");
+                alert("Thank you for your payment. You will be redirected to the main page.");
                 location.replace("index3.html");
             }
         }
